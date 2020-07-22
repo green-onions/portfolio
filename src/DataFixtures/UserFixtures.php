@@ -28,7 +28,7 @@ class UserFixtures extends Fixture
         j\'ai suivi une formation en PHP - Symfony et suis à la recherche d\'opportunités pour mettre 
         à l\'épreuve cette nouvelle qualification. Vous retrouverez sur ce site toutes les réalisations 
         auxquelles j\'ai participé.');
-        $user->setPassword('coucou');
+        $user->setPassword($this->passwordEncoder->encodePassword($user,'coucou'));
         $user->setRoles(['ROLE_ADMIN']);
         $manager->persist($user);
         $this->addReference('user', $user);

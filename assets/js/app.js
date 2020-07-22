@@ -19,6 +19,7 @@ require('bootstrap');
 function windowH() {
     const wH = $(window).height();
     $('.sidenav').css({height: wH});
+    $('.login-surcontainer').css({height: wH});
 }
 windowH();
 

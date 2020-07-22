@@ -1,0 +1,33 @@
+<div class="accordion ml-4 mr-4" id="accordionProject">
+    {% for project in projects %}
+    <div class="card">
+        <div class="card-header" id="heading-{{ project.id }}">
+            <h2 class="mb-0">
+                <button class="btn btn-block text-left txt-shadow card-title" type="button" data-toggle="collapse" data-target="#collapse-{{ project.id }}" aria-expanded="false" aria-controls="collapse-{{ project.id }}">
+                    {{ project.title }}
+                </button>
+            </h2>
+        </div>
+        <div id="collapse-{{ project.id }}" class="collapse" aria-labelledby="heading-{{ project.id }}" data-parent="#accordionProject">
+            <div class="card-body bck-black">
+                <div class="row">
+                    <div class="col-8">
+                        {{ project.description }}
+                    </div>
+                    <div class="col-4 border-left pl-0">
+                        <div class="top-card d-flex justify-content-center align-items-center">
+                            <p class="p-0 m-0 txt-shadow">{{ project.title|upper }}</p>
+                            <img class="img-project pl-3" src="{{ project.image }}" alt="Image of {{ project.title }}">
+                        </div>
+                        {% for language in project.languages %}
+                            <img class="img-project ml-3 mt-3" src="{{ language.image }}" alt="Image of {{ language.name }}">
+                        {% endfor %}
+                        <p class="mt-4 ml-4">Client | {{ project.client }}</p>
+                        <p class="ml-4 mb-0">Le projet est à retrouver <a class="card-link" href="{{ project.link }}">ici</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

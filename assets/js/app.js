@@ -16,8 +16,13 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
+function windowH() {
+    const wH = $(window).height();
+    $('.sidenav').css({height: wH});
+}
+windowH();
+
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

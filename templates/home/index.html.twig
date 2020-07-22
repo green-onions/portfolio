@@ -3,5 +3,16 @@
 {% block title %}Portfolio Marien Regnault{% endblock %}
 
 {% block body %}
-    <p>Hello le portfolio !</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-9">
+                <h1 class="main-title ml-4 mt-4">DEV-APPS</h1>
+                <h2 class="main-title ml-4 mb-5">portfolio pour développeurs web</h2>
+                {{ include('home/_collapse_project.html.twig') }}
+            </div>
+            <div class="col-3 sidenav">
+                {{ include('home/_sidenav.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

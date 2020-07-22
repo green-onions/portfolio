@@ -1,5 +1,6 @@
+/* IMPORT BOOTSTRAP */
 @import "~bootstrap/scss/bootstrap";
 
-body {
-  background-color: red;
-}
+/* IMPORT OTHER SCSS FILES */
+@import "vars";
+@import "main";

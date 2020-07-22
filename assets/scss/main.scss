@@ -1,0 +1,90 @@
+body {
+  background-color: $grey-dark;
+  font-family: $text-font;
+  color: $white;
+}
+
+.bck {
+  &-black {
+    background-color: $black;
+  }
+  &-mustard {
+    background-color: $mustard;
+  }
+  &-bronze {
+    background-color: $bronze;
+  }
+  &-grey-dark {
+    background-color: $grey-dark;
+  }
+  &-grey-light {
+    background-color: $grey-light;
+  }
+}
+
+.color {
+  &-black {
+    color: $black;
+  }
+  &-mustard {
+    color: $mustard;
+  }
+  &-bronze {
+    color: $bronze;
+  }
+  &-grey-dark {
+    color: $grey-dark;
+  }
+  &-grey-light {
+    color: $grey-light;
+  }
+}
+
+.main-title {
+  font-family: $main-title-font;
+}
+
+/* ACCORDION */
+.card-header {
+  background-color: $mustard;
+}
+
+.card-title {
+  font-family: $main-title-font;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+}
+
+.txt-shadow {
+  text-shadow: 1px 1px 2px $bronze, 0 0 1em $black, 0 0 0.2em $black;
+}
+
+.border-left {
+  border-left: 2px solid $white !important;
+}
+
+.top-card {
+  height: 3rem;
+  width: 100%;
+  margin: 0;
+  border-bottom: 2px solid $white;
+  border-top: 2px solid $white;
+  border-right: 2px solid $white;
+}
+
+.card-link {
+  color: $mustard;
+}
+
+.card-link:hover {
+  color: $white;
+}
+
+.img-project {
+  height: 2.6rem;
+}
+
+/* SIDENAV */
+.sidenav {
+  background-color: $bronze;
+}

@@ -11,7 +11,7 @@
         <div class="admin-card rounded ml-4 mt-5">
             <h2 class="main-title">
                 Profil
-                <a class="ml-2" href="{{ path('user_edit', {'id': user.id}) }}">
+                <a class="ml-2 link-edit" href="{{ path('user_edit') }}">
                     <i class="fa fa-edit"></i>
                 </a>
             </h2>
@@ -19,10 +19,14 @@
                 <img class="admin-img" src="https://avatars.githubusercontent.com/{{ user.username }}" alt="Picture of {{ user.firstname }} {{ user.lastname }}">
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">{{ user.firstname|upper }} {{ user.lastname|upper }}</p>
+                <p class="m-0 p-0 sidenav-name">
+                    {{ user.firstname|upper }} {{ user.lastname|upper }}
+                </p>
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-title-container rounded mt-3 pr-1 pl-1">
-                <p class="m-0 p-0 sidenav-name">{{ user.jobTitle|upper }}</p>
+                <p class="m-0 p-0 sidenav-name">
+                    {{ user.jobTitle|upper }}
+                </p>
             </div>
             <div class="d-flex justify-content-center mt-3">
                 {% for language in user.languages %}
@@ -32,13 +36,34 @@
         </div>
         <div class="admin-card rounded ml-4 mt-5">
             <h2 class="main-title">Projets</h2>
-            <p>Nombre de projets</p>
-            <a href="{{ path('project_index') }}">Voir mes projets</a>
-            <a href="{{ path('project_new') }}">Ajouter un projet</a>
+            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded pr-2 pl-2 mt-3">
+                <p class="m-0 p-0 sidenav-name">
+                    {{ projects|length }} projet{{ projects|length > 1 ? 's' : '' }} présenté{{ projects|length > 1 ? 's' : '' }}
+                </p>
+            </div>
+            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
+                <p class="m-0 p-0 sidenav-name">
+                    Dernier projet mis en ligne
+                </p>
+            </div>
+            <div class="admin-subcard rounded-bottom d-flex justify-content-center mb-3">
+                {% set project = projects|last %}
+                <a class="text-center" href="{{ path('project_edit', {'id': project.id}) }}">
+                    <img class="admin-logo" src="{{ project.image }}" alt="Image de {{ project.title }}">
+                </a>
+            </div>
+            <div class="d-flex justify-content-around">
+                <a class="btn bck-mustard color-black" href="{{ path('project_index') }}">Voir mes projets</a>
+                <a class="btn bck-mustard color-black" href="{{ path('project_new') }}">Ajouter un projet</a>
+            </div>
         </div>
         <div class="admin-card rounded ml-4 mt-5">
             <h2 class="main-title">Options</h2>
-            <p>Voir les langages</p>
+            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
+                <p class="m-0 p-0 sidenav-name">
+                    {{ languages|length }} techno{{ languages|length > 1 ? 's' : '' }} maîtrisée{{ languages|length > 1 ? 's' : '' }}
+                </p>
+            </div>
             <p>Voir les réseaux sociaux</p>
             <p>Voir les messages</p>
         </div>

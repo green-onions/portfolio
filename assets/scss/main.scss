@@ -21,6 +21,9 @@ body {
   &-grey-light {
     background-color: $grey-light;
   }
+  &-red {
+    background-color: $red;
+  }
 }
 
 .color {
@@ -39,6 +42,10 @@ body {
   &-grey-light {
     color: $grey-light;
   }
+}
+
+td {
+  max-width: 55rem;
 }
 
 .main-title {
@@ -167,7 +174,6 @@ body {
     padding: 1rem;
     background-color: $mustard;
   }
-
   &-btn {
     background-color: $bronze;
   }
@@ -181,18 +187,26 @@ body {
     width: 20rem;
     height: 28rem;
     box-shadow: 2px 2px 2px $grey-light;
-    & a {
-      color: $mustard;
-      &:hover {
-        color: $white;
-        text-decoration: none;
-      }
-    }
   }
   &-img {
     width: 70%;
     border-radius: 50%;
     border: 3px solid $black;
+  }
+  &-subcard {
+    background-color: $grey-light;
+    padding: 0.3rem;
+  }
+  &-logo {
+    width: 80%;
+  }
+}
+
+.link-edit {
+  color: $mustard;
+  &:hover {
+    color: $white;
+    text-decoration: none;
   }
 }
 
@@ -207,7 +221,8 @@ body {
   }
 }
 
-#user_username, #user_firstname, #user_lastname, #user_job_title {
+#user_username, #user_firstname, #user_lastname, #user_job_title, #project_Title,
+#project_link, #project_image, #project_client {
   width: 80%;
 }
 
@@ -217,15 +232,26 @@ body {
   padding-left: 0.3rem;
 }
 
-#user_languages, #user_socialNetworks {
+#project_description {
+  width: 80%;
+  height: 11rem;
+  padding-left: 0.3rem;
+}
+
+#user_languages, #user_socialNetworks, #project_languages {
   color: $black;
 }
 
-#user_languages_7, #user_socialNetworks_7 {
+#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
   margin-right: 0.5rem;
 }
 
-#user_languages_8, #user_socialNetworks_8 {
+#user_languages_8, #user_socialNetworks_8, #project_languages_8 {
   margin-right: 0.5rem;
   margin-left: 1rem;
+}
+
+.check-btn {
+  background-color: $bronze;
+  margin-right: 3.6rem;
 }

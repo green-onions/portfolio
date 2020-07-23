@@ -2,8 +2,13 @@
 
 namespace App\Controller;
 
+use App\Repository\LanguageRepository;
+use App\Repository\MessageRepository;
+use App\Repository\ProjectRepository;
+use App\Repository\SocialNetworkRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
@@ -11,14 +16,29 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin", name="admin")
      * @param UserRepository $userRepository
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param ProjectRepository $projectRepository
+     * @param LanguageRepository $languageRepository
+     * @param SocialNetworkRepository $networkRepository
+     * @param MessageRepository $messageRepository
+     * @return void
      */
-    public function index(UserRepository $userRepository)
-    {
-        $user = $userRepository->findOneBy([]);
+    public function index(
+        UserRepository $userRepository,
+        ProjectRepository $projectRepository,
+        LanguageRepository $languageRepository,
+        SocialNetworkRepository $networkRepository,
+        MessageRepository $messageRepository
+    ): Response {
+        $user      = $userRepository->findOneBy([]);
+        $projects  = $projectRepository->findAll();
+        $languages = $languageRepository->findAll();
+        $networks  = $networkRepository->findAll();
 
         return $this->render('admin/index.html.twig', [
-            'user' => $user,
+            'user'      => $user,
+            'projects'  => $projects,
+            'languages' => $languages,
+            'networks'  => $networks,
         ]);
     }
 }

@@ -312,13 +312,17 @@ td {
   color: $black;
 }
 
-#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
-  margin-right: 0.5rem;
-}
+//#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
+//  margin-right: 0.5rem;
+//}
 
-#user_languages_8, #user_socialNetworks_8, #project_languages_8 {
+[id^="user_languages_"], [id^="user_socialNetworks_"], [id^="project_languages_"] {
   margin-right: 0.5rem;
   margin-left: 1rem;
+}
+
+#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
+  margin-left: 0;
 }
 
 #message_mail, #message_name {
@@ -346,4 +350,14 @@ td {
 .alert-anime {
   text-shadow: none;
   animation: alert 2s infinite;
+}
+
+.card-show {
+  &-container {
+    background-color: $mustard;
+    width: 10rem;
+  }
+  &-img {
+    width: 7rem;
+  }
 }

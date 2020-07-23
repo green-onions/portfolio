@@ -12,37 +12,20 @@
                 </a>
             </h1>
         </div>
-        <table class="table text-white mt-5">
-            <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Image</th>
-                <th><i class="fa fa-edit"></i></th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for network in social_networks|reverse %}
-                <tr>
-                    <td>
-                        <a class="link-edit" href="{{ network.link }}">
-                            {{ network.name }}
-                        </a>
-                    </td>
-                    <td>
-                        <img class="img-project" src="{{ network.image }}" alt="Image de {{ network.name }}">
-                    </td>
-                    <td>
+        <div class="d-flex">
+            {% for network in social_networks %}
+                <div class="card-show-container rounded mt-5 ml-3">
+                    <div class="bck-black text-white d-flex justify-content-between p-2 rounded-top">
+                        <p class="m-0 main-title">{{ network.name }}</p>
                         <a class="link-edit" href="{{ path('social_network_edit', {'id': network.id}) }}">
                             <i class="fa fa-edit"></i>
                         </a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="3">Aucun réseau social trouvé</td>
-                </tr>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center p-3 rounded-bottom">
+                        <img class="card-show-img" src="{{ network.image }}" alt="Image de {{ network.name }}">
+                    </div>
+                </div>
             {% endfor %}
-            </tbody>
-        </table>
+        </div>
     </div>
 {% endblock %}

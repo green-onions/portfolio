@@ -12,33 +12,20 @@
             </a>
         </h1>
     </div>
-    <table class="table text-white mt-5">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Image</th>
-                <th><i class="fa fa-edit"></i></th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for language in languages|reverse %}
-            <tr>
-                <td>{{ language.name }}</td>
-                <td>
-                    <img class="img-project" src="{{ language.image }}" alt="Image de {{ language.name }}">
-                </td>
-                <td>
-                    <a class="link-edit" href="{{ path('language_edit', {'id': language.id}) }}">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">Aucune techno trouvée</td>
-            </tr>
+    <div class="d-flex">
+        {% for language in languages %}
+        <div class="card-show-container rounded mt-5 ml-3">
+            <div class="bck-black text-white d-flex justify-content-between p-2 rounded-top">
+                <p class="m-0 main-title">{{ language.name }}</p>
+                <a class="link-edit" href="{{ path('language_edit', {'id': language.id}) }}">
+                    <i class="fa fa-edit"></i>
+                </a>
+            </div>
+            <div class="d-flex justify-content-center align-items-center p-3 rounded-bottom">
+                <img class="card-show-img" src="{{ language.image }}" alt="Image de {{ language.name }}">
+            </div>
+        </div>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 </div>
 {% endblock %}

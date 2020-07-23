@@ -1,0 +1,6 @@
+{{ form_start(form) }}
+<div>
+    {{ form_widget(form.isRead) }}
+</div>
+<button class="btn bck-bronze float-right text-white txt-shadow mt-3">{{ button_label|default('Valider') }}</button>
+{{ form_end(form) }}

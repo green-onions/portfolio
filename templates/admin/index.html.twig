@@ -38,12 +38,12 @@
             <h2 class="main-title">Projets</h2>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded pr-2 pl-2 mt-3">
                 <p class="m-0 p-0 sidenav-name">
-                    {{ projects|length }} projet{{ projects|length > 1 ? 's' : '' }} présenté{{ projects|length > 1 ? 's' : '' }}
+                    {{ projects|length }} projet{{ projects|length > 1 ? 's' : '' }} mis en avant
                 </p>
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
                 <p class="m-0 p-0 sidenav-name">
-                    Dernier projet mis en ligne
+                    Dernier projet publié
                 </p>
             </div>
             <div class="admin-subcard rounded-bottom d-flex justify-content-center mb-3">
@@ -52,17 +52,32 @@
                     <img class="admin-logo" src="{{ project.image }}" alt="Image de {{ project.title }}">
                 </a>
             </div>
-            <div class="d-flex justify-content-around">
-                <a class="btn bck-mustard color-black" href="{{ path('project_index') }}">
+            <div>
+                <a class="btn bck-mustard color-black float-right ml-3" href="{{ path('project_index') }}">
                     <i class="fa fa-eye"></i>
                 </a>
-                <a class="btn bck-mustard color-black" href="{{ path('project_new') }}">
+                <a class="btn bck-mustard color-black float-right" href="{{ path('project_new') }}">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
         </div>
         <div class="admin-card rounded ml-4 mt-5">
             <h2 class="main-title">Options</h2>
+            {% if messages %}
+            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
+                <p class="m-0 p-0 sidenav-name">
+                    {{ messages|length }} message{{ networks|length > 1 ? 's' : '' }} non lu{{ networks|length > 1 ? 's' : '' }}
+                    <i class="fa fa-circle color-red ml-2 alert-anime"></i>
+                </p>
+            </div>
+            <div class="list-group">
+                {% for message in messages|reverse %}
+                    <a href="{{ path('message_show', {'id': message.id}) }}" class="list-group-item list-group-item-action">
+                        {{ message.name }}
+                    </a>
+                {% endfor %}
+            </div>
+            {% endif %}
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
                 <p class="m-0 p-0 sidenav-name">
                     {{ languages|length }} techno{{ languages|length > 1 ? 's' : '' }} disponible{{ languages|length > 1 ? 's' : '' }}
@@ -87,7 +102,6 @@
                     </a>
                 {% endfor %}
             </div>
-            <p>Voir les messages</p>
         </div>
     </div>
 </div>

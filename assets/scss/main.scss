@@ -5,6 +5,18 @@ body {
   color: $white;
 }
 
+@keyframes alert {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .bck {
   &-black {
     background-color: $black;
@@ -42,6 +54,9 @@ body {
   &-grey-light {
     color: $grey-light;
   }
+  &-red {
+    color: $red;
+  }
 }
 
 td {
@@ -60,7 +75,7 @@ td {
   background-color: $red;
   position: fixed;
   float: right;
-  top: 1rem;
+  top: 1.5rem;
   left: calc(100vw - 4.5rem);
 }
 
@@ -306,6 +321,11 @@ td {
   margin-left: 1rem;
 }
 
+#message_mail, #message_name {
+  padding: 3px 5px;
+  width: 48%;
+}
+
 .check-btn {
   background-color: $bronze;
   margin-right: 3.6rem;
@@ -317,4 +337,13 @@ td {
 
 .margin-18 {
   margin-left: 18%;
+}
+
+.message-name {
+  min-width: 12rem;
+}
+
+.alert-anime {
+  text-shadow: none;
+  animation: alert 2s infinite;
 }

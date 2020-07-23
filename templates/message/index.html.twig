@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}dev-apps\messages{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="main-title ml-4 mt-4">Messages</h1>
+        </div>
+        <table class="table text-white mt-5">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Mail</th>
+                <th>Message</th>
+                <th>Lu ?</th>
+                <th><i class="fa fa-eye"></i></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for message in messages|reverse %}
+                <tr>
+                    <td class="message-name">{{ message.name }}</td>
+                    <td class="message-name">
+                        <a class="link-edit" href="mailto:{{ message.mail }}" target="_blank">
+                            {{ message.mail }}
+                        </a>
+                    </td>
+                    <td>{{ message.message }}</td>
+                    <td>{{ message.isRead ? 'Oui' : 'Non' }}</td>
+                    <td>
+                        <a class="link-edit" href="{{ path('message_show', {'id': message.id}) }}">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Aucun réseau social trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

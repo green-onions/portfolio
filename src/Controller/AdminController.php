@@ -33,12 +33,14 @@ class AdminController extends AbstractController
         $projects  = $projectRepository->findAll();
         $languages = $languageRepository->findAll();
         $networks  = $networkRepository->findAll();
+        $messages  = $messageRepository->findBy(['isRead' => false]);
 
         return $this->render('admin/index.html.twig', [
             'user'      => $user,
             'projects'  => $projects,
             'languages' => $languages,
             'networks'  => $networks,
+            'messages'  => $messages,
         ]);
     }
 }

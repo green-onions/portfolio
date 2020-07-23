@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dev-Apps / {{ user.firstname }} {{ user.lastname }}{% endblock %}
+{% block title %}dev-apps\{{ user.firstname|lower }}_{{ user.lastname|lower }}{% endblock %}
 
 {% block body %}
     {{ include('home/_modal_message.html.twig') }}

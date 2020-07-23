@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}dev-apps\modifier-profil{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-center align-items-center surcontainer">
+    <div class="form-user-container rounded shadow-sm">
+        <h1 class="main-title text-center txt-shadow">Modifier mon profil</h1>
+        {{ include('user/_form.html.twig') }}
+    </div>
+</div>
+
+{% endblock %}

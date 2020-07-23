@@ -1,0 +1,23 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-6 form-user-column">
+        <p class="color-black mb-2 float-left">{{ form.username.vars.label }}</p>
+        {{ form_widget(form.username) }}
+        <p class="color-black mb-2 mt-2">{{ form.firstname.vars.label }}</p>
+        {{ form_widget(form.firstname) }}
+        <p class="color-black mb-2 mt-2">{{ form.lastname.vars.label }}</p>
+        {{ form_widget(form.lastname) }}
+        <p class="color-black mb-2 mt-2">{{ form.job_title.vars.label }}</p>
+        {{ form_widget(form.job_title) }}
+        <p class="color-black mb-2 mt-2">{{ form.languages.vars.label }}</p>
+        {{ form_widget(form.languages) }}
+    </div>
+    <div class="col-6 form-user-column">
+        <p class="color-black mb-2">{{ form.description.vars.label }}</p>
+        {{ form_widget(form.description) }}
+        <p class="color-black mb-2 mt-2">{{ form.socialNetworks.vars.label }}</p>
+        {{ form_widget(form.socialNetworks) }}
+    </div>
+</div>
+    <button class="btn login-btn float-right text-white txt-shadow"><i class="fa fa-check"></i></button>
+{{ form_end(form) }}

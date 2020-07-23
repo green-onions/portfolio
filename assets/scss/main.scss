@@ -1,3 +1,4 @@
+/* MAIN */
 body {
   background-color: $grey-dark;
   font-family: $text-font;
@@ -80,6 +81,10 @@ body {
 }
 
 .img-project {
+  height: 2rem;
+}
+
+.collapse-img-language {
   height: 2.6rem;
 }
 
@@ -156,13 +161,71 @@ body {
 }
 
 /* LOGIN */
+.login {
+  &-container {
+    width: 30%;
+    padding: 1rem;
+    background-color: $mustard;
+  }
 
-.login-container {
-  width: 30%;
-  padding: 1rem;
-  background-color: $mustard;
+  &-btn {
+    background-color: $bronze;
+  }
 }
 
-.login-btn {
-  background-color: $bronze;
+/* ADMIN */
+.admin {
+  &-card {
+    background-color: $bronze;
+    padding: 0.5rem 0.8rem;
+    width: 20rem;
+    height: 28rem;
+    box-shadow: 2px 2px 2px $grey-light;
+    & a {
+      color: $mustard;
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+  &-img {
+    width: 70%;
+    border-radius: 50%;
+    border: 3px solid $black;
+  }
+}
+
+.form-user {
+  &-container {
+    width: 60%;
+    padding: 1rem;
+    background-color: $mustard;
+  }
+  &-column {
+    padding-left: 10%;
+  }
+}
+
+#user_username, #user_firstname, #user_lastname, #user_job_title {
+  width: 80%;
+}
+
+#user_description {
+  width: 80%;
+  height: 15rem;
+  padding-left: 0.3rem;
+}
+
+#user_languages, #user_socialNetworks {
+  color: $black;
+}
+
+#user_languages_7, #user_socialNetworks_7 {
+  margin-right: 0.5rem;
+}
+
+#user_languages_8, #user_socialNetworks_8 {
+  margin-right: 0.5rem;
+  margin-left: 1rem;
 }

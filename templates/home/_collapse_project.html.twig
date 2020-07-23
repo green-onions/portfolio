@@ -1,5 +1,5 @@
 <div class="accordion ml-4 mr-4" id="accordionProject">
-    {% for project in projects %}
+    {% for project in projects|reverse %}
     <div class="card">
         <div class="card-header" id="heading-{{ project.id }}">
             <h2 class="mb-0">
@@ -20,7 +20,7 @@
                             <img class="img-project pl-3" src="{{ project.image }}" alt="Image of {{ project.title }}">
                         </div>
                         {% for language in project.languages %}
-                        <img class="img-project ml-3 mt-3" src="{{ language.image }}" alt="Image of {{ language.name }}">
+                        <img class="collapse-img-language ml-3 mt-3" src="{{ language.image }}" alt="Image of {{ language.name }}">
                         {% endfor %}
                         <p class="mt-4 ml-4">$client = '{{ project.client }}'</p>
                         <p class="ml-4 mb-0">$this-><a class="card-link" href="{{ project.link }}" target="_blank">getProject</a>()</p>

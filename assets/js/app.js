@@ -20,6 +20,9 @@ function windowH() {
 }
 windowH();
 
+$("[data-toggle=popover]")
+    .popover({html:true})
+
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });

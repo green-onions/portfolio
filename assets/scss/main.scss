@@ -56,6 +56,33 @@ td {
   text-shadow: 1px 1px 2px $bronze, 0 0 1em $black, 0 0 0.2em $black;
 }
 
+.navbar-button {
+  background-color: $red;
+  position: fixed;
+  float: right;
+  top: 1rem;
+  left: calc(100vw - 4.5rem);
+  color: $grey-dark !important;
+}
+
+.popover-header {
+  background-color: $black;
+  margin-bottom: 2px solid $white;
+  text-align: center;
+}
+
+.popover-body {
+  background-color: $black;
+  font-family: $main-title-font;
+}
+
+.popover-body a {
+  color: $mustard;
+  &:hover {
+    color: $white;
+  }
+}
+
 /* ACCORDION */
 .card {
   &-header {

@@ -44,19 +44,26 @@ body {
   font-family: $main-title-font;
 }
 
-/* ACCORDION */
-.card-header {
-  background-color: $mustard;
-}
-
-.card-title {
-  font-family: $main-title-font;
-  margin-bottom: 0;
-  font-size: 1.5rem;
-}
-
 .txt-shadow {
   text-shadow: 1px 1px 2px $bronze, 0 0 1em $black, 0 0 0.2em $black;
+}
+
+/* ACCORDION */
+.card {
+  &-header {
+    background-color: $mustard;
+  }
+  &-title {
+    font-family: $main-title-font;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+  &-link {
+    color: $mustard;
+    &:hover {
+      color: $white;
+    }
+  }
 }
 
 .border-left {
@@ -70,14 +77,6 @@ body {
   border-bottom: 2px solid $white;
   border-top: 2px solid $white;
   border-right: 2px solid $white;
-}
-
-.card-link {
-  color: $mustard;
-}
-
-.card-link:hover {
-  color: $white;
 }
 
 .img-project {
@@ -101,6 +100,9 @@ body {
     &-language {
       width: 4rem;
     }
+    &-message {
+      height: 2rem;
+    }
   }
   &-name {
     font-family: $main-title-font;
@@ -110,6 +112,16 @@ body {
       background-color: $black;
       margin-top: -1rem;
     }
+  }
+  &-message {
+    position: absolute;
+    right: 1.9rem;
+    top: 1.8rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: $mustard;
+    border: 2px solid $black;
   }
 }
 
@@ -127,6 +139,20 @@ body {
 .dropdown-menu {
   min-width: 0px;
   background-color: $mustard;
+}
+
+.modal-content {
+  background-color: $mustard;
+}
+
+#message_message {
+  width: 100%;
+  height: 5rem;
+  padding: 5px;
+}
+
+#message_mail {
+  padding: 5px;
 }
 
 /* LOGIN */

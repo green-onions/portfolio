@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+<div>
+    {{ form_widget(form.mail, {'attr': {'placeholder': 'Votre mail'}}) }}
+</div>
+<div class="mt-3 mb-2">
+    {{ form_widget(form.message, {'attr': {'placeholder': 'Votre message'}}) }}
+</div>
+<button class="btn login-btn float-right text-white txt-shadow">{{ button_label|default('Envoyer') }}</button>
+{{ form_end(form) }}

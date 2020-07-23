@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio Marien Regnault{% endblock %}
+{% block title %}Dev-Apps / {{ user.firstname }} {{ user.lastname }}{% endblock %}
 
 {% block body %}
+    {{ include('home/_modal_message.html.twig') }}
     <div class="container-fluid">
         <div class="row">
             <div class="col-9">

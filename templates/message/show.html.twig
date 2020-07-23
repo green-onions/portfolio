@@ -8,13 +8,15 @@
             <h1 class="main-title text-center txt-shadow">Message</h1>
             <p class="color-black">
                 Envoyé par {{ message.name }}
-                (<a href="mailto:{{ message.mail }}" target="_blank">
+                (<a class="message-link" href="mailto:{{ message.mail }}" target="_blank">
                     {{ message.mail }}
                 </a>)
             </p>
             <p class="color-black">{{ message.message }}</p>
-            {{ include('message/_form_validate.html.twig') }}
-            {{ include('message/_delete_form.html.twig') }}
+            <div class="d-flex justify-content-center">
+                {{ include('message/_form_validate.html.twig') }}
+                {{ include('message/_delete_form.html.twig') }}
+            </div>
         </div>
     </div>
 {% endblock %}

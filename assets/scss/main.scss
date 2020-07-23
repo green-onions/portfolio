@@ -285,7 +285,8 @@ td {
 
 #user_username, #user_firstname, #user_lastname, #user_job_title, #project_Title,
 #project_link, #project_image, #project_client, #language_name, #language_image,
-#social_network_name, #social_network_image, #social_network_link {
+#social_network_name, #social_network_image, #social_network_link, #user_languages,
+#user_socialNetworks{
   width: 80%;
 }
 
@@ -293,12 +294,7 @@ td {
   width: 80%;
   height: 15rem;
   padding-left: 0.3rem;
-  margin-bottom: 0.563rem;
-}
-
-#user_socialNetworks {
-  margin-top: 0;
-  padding-top: 0;
+  margin-bottom: -0.45rem;
 }
 
 #project_description {
@@ -306,23 +302,6 @@ td {
   height: 11rem;
   padding-left: 0.3rem;
   margin-bottom: 0.25rem;
-}
-
-#user_languages, #user_socialNetworks, #project_languages {
-  color: $black;
-}
-
-//#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
-//  margin-right: 0.5rem;
-//}
-
-[id^="user_languages_"], [id^="user_socialNetworks_"], [id^="project_languages_"] {
-  margin-right: 0.5rem;
-  margin-left: 1rem;
-}
-
-#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
-  margin-left: 0;
 }
 
 #message_mail, #message_name {
@@ -343,9 +322,19 @@ td {
   margin-left: 18%;
 }
 
-.message-name {
-  min-width: 12rem;
+.message {
+  &-name {
+    min-width: 12rem;
+  }
+  &-link {
+    color: $grey-dark;
+  }
+  &-link:hover {
+    color: $red;
+    text-decoration: none;
+  }
 }
+
 
 .alert-anime {
   text-shadow: none;
@@ -360,4 +349,12 @@ td {
   &-img {
     width: 7rem;
   }
+}
+
+.btn-sm {
+  margin: 0 0 0.3rem 1rem;
+}
+
+.custom-switch {
+  padding-left: 2.8rem;
 }

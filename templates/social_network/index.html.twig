@@ -1,39 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SocialNetwork index{% endblock %}
+{% block title %}dev-apps\réseaux-sociaux{% endblock %}
 
 {% block body %}
-    <h1>SocialNetwork index</h1>
-
-    <table class="table">
-        <thead>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="main-title ml-4 mt-4">
+                Réseaux sociaux
+                <a class="btn-sm btn bck-mustard" href="{{ path('social_network_new') }}">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </h1>
+        </div>
+        <table class="table text-white mt-5">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Image</th>
-                <th>Link</th>
-                <th>actions</th>
+                <th><i class="fa fa-edit"></i></th>
             </tr>
-        </thead>
-        <tbody>
-        {% for social_network in social_networks %}
-            <tr>
-                <td>{{ social_network.id }}</td>
-                <td>{{ social_network.name }}</td>
-                <td>{{ social_network.image }}</td>
-                <td>{{ social_network.link }}</td>
-                <td>
-                    <a href="{{ path('social_network_show', {'id': social_network.id}) }}">show</a>
-                    <a href="{{ path('social_network_edit', {'id': social_network.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('social_network_new') }}">Create new</a>
+            </thead>
+            <tbody>
+            {% for network in social_networks|reverse %}
+                <tr>
+                    <td>
+                        <a class="link-edit" href="{{ network.link }}">
+                            {{ network.name }}
+                        </a>
+                    </td>
+                    <td>
+                        <img class="img-project" src="{{ network.image }}" alt="Image de {{ network.name }}">
+                    </td>
+                    <td>
+                        <a class="link-edit" href="{{ path('social_network_edit', {'id': network.id}) }}">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun réseau social trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

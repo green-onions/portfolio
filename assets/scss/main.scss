@@ -62,7 +62,6 @@ td {
   float: right;
   top: 1rem;
   left: calc(100vw - 4.5rem);
-  color: $grey-dark !important;
 }
 
 .popover-header {
@@ -85,6 +84,7 @@ td {
 
 /* ACCORDION */
 .card {
+  border: 1px solid $black;
   &-header {
     background-color: $mustard;
   }
@@ -203,6 +203,7 @@ td {
   }
   &-btn {
     background-color: $bronze;
+    margin-right: 3.6rem;
   }
 }
 
@@ -214,6 +215,7 @@ td {
     width: 20rem;
     height: 28rem;
     box-shadow: 2px 2px 2px $grey-light;
+    overflow-x: scroll;
   }
   &-img {
     width: 70%;
@@ -221,11 +223,12 @@ td {
     border: 3px solid $black;
   }
   &-subcard {
-    background-color: $grey-light;
+    background-color: $mustard;
     padding: 0.3rem;
   }
   &-logo {
     width: 80%;
+    filter: drop-shadow(0 0 0.3rem $black);
   }
 }
 
@@ -234,6 +237,17 @@ td {
   &:hover {
     color: $white;
     text-decoration: none;
+  }
+}
+
+.list-group-item {
+  height: 1.7rem;
+  padding: 0.1rem 0 0 0.5rem;
+  border-radius: 0 !important;
+  background-color: $mustard;
+  &:last-child {
+    border-bottom-left-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
   }
 }
 
@@ -248,8 +262,15 @@ td {
   }
 }
 
+.form-other-container {
+  width: 40%;
+  padding: 1rem;
+  background-color: $mustard;
+}
+
 #user_username, #user_firstname, #user_lastname, #user_job_title, #project_Title,
-#project_link, #project_image, #project_client {
+#project_link, #project_image, #project_client, #language_name, #language_image,
+#social_network_name, #social_network_image, #social_network_link {
   width: 80%;
 }
 
@@ -257,12 +278,19 @@ td {
   width: 80%;
   height: 15rem;
   padding-left: 0.3rem;
+  margin-bottom: 0.563rem;
+}
+
+#user_socialNetworks {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 #project_description {
   width: 80%;
   height: 11rem;
   padding-left: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 
 #user_languages, #user_socialNetworks, #project_languages {
@@ -281,4 +309,12 @@ td {
 .check-btn {
   background-color: $bronze;
   margin-right: 3.6rem;
+  &-other {
+    background-color: $bronze;
+    margin-right: 2.6rem;
+  }
+}
+
+.margin-18 {
+  margin-left: 18%;
 }

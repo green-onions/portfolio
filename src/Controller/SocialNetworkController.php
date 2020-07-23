@@ -17,6 +17,8 @@ class SocialNetworkController extends AbstractController
 {
     /**
      * @Route("/", name="social_network_index", methods={"GET"})
+     * @param SocialNetworkRepository $socialNetworkRepository
+     * @return Response
      */
     public function index(SocialNetworkRepository $socialNetworkRepository): Response
     {
@@ -27,6 +29,8 @@ class SocialNetworkController extends AbstractController
 
     /**
      * @Route("/new", name="social_network_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -39,7 +43,7 @@ class SocialNetworkController extends AbstractController
             $entityManager->persist($socialNetwork);
             $entityManager->flush();
 
-            return $this->redirectToRoute('social_network_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('social_network/new.html.twig', [
@@ -49,17 +53,10 @@ class SocialNetworkController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="social_network_show", methods={"GET"})
-     */
-    public function show(SocialNetwork $socialNetwork): Response
-    {
-        return $this->render('social_network/show.html.twig', [
-            'social_network' => $socialNetwork,
-        ]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="social_network_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param SocialNetwork $socialNetwork
+     * @return Response
      */
     public function edit(Request $request, SocialNetwork $socialNetwork): Response
     {
@@ -69,7 +66,7 @@ class SocialNetworkController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('social_network_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('social_network/edit.html.twig', [
@@ -80,6 +77,9 @@ class SocialNetworkController extends AbstractController
 
     /**
      * @Route("/{id}", name="social_network_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param SocialNetwork $socialNetwork
+     * @return Response
      */
     public function delete(Request $request, SocialNetwork $socialNetwork): Response
     {

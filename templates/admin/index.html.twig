@@ -53,18 +53,40 @@
                 </a>
             </div>
             <div class="d-flex justify-content-around">
-                <a class="btn bck-mustard color-black" href="{{ path('project_index') }}">Voir mes projets</a>
-                <a class="btn bck-mustard color-black" href="{{ path('project_new') }}">Ajouter un projet</a>
+                <a class="btn bck-mustard color-black" href="{{ path('project_index') }}">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a class="btn bck-mustard color-black" href="{{ path('project_new') }}">
+                    <i class="fa fa-plus"></i>
+                </a>
             </div>
         </div>
         <div class="admin-card rounded ml-4 mt-5">
             <h2 class="main-title">Options</h2>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
                 <p class="m-0 p-0 sidenav-name">
-                    {{ languages|length }} techno{{ languages|length > 1 ? 's' : '' }} maîtrisée{{ languages|length > 1 ? 's' : '' }}
+                    {{ languages|length }} techno{{ languages|length > 1 ? 's' : '' }} disponible{{ languages|length > 1 ? 's' : '' }}
                 </p>
             </div>
-            <p>Voir les réseaux sociaux</p>
+            <div class="list-group">
+                {% for language in languages|reverse %}
+                <a href="{{ path('language_edit', {'id': language.id}) }}" class="list-group-item list-group-item-action">
+                    {{ language.name }}
+                </a>
+                {% endfor %}
+            </div>
+            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
+                <p class="m-0 p-0 sidenav-name">
+                    {{ networks|length }} réseau{{ networks|length > 1 ? 'x' : '' }} soci{{ networks|length > 1 ? 'aux' : 'al' }}
+                </p>
+            </div>
+            <div class="list-group">
+                {% for network in networks|reverse %}
+                    <a href="{{ path('social_network_edit', {'id': network.id}) }}" class="list-group-item list-group-item-action">
+                        {{ network.name }}
+                    </a>
+                {% endfor %}
+            </div>
             <p>Voir les messages</p>
         </div>
     </div>

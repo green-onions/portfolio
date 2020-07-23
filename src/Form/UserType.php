@@ -35,7 +35,7 @@ class UserType extends AbstractType
             ->add('languages', EntityType::class, [
                 'class' => Language::class,
                 'choice_label' => 'name',
-                'label' => 'Technos',
+                'label' => false,
                 'multiple' => true,
                 'expanded' => true,
                 'by_reference' => false,
@@ -43,7 +43,7 @@ class UserType extends AbstractType
             ->add('socialNetworks', EntityType::class, [
                 'class' => SocialNetwork::class,
                 'choice_label' => 'name',
-                'label' => 'Réseaux sociaux',
+                'label' => false,
                 'multiple' => true,
                 'expanded' => true,
                 'by_reference' => false,

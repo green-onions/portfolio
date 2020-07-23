@@ -17,6 +17,8 @@ class LanguageController extends AbstractController
 {
     /**
      * @Route("/", name="language_index", methods={"GET"})
+     * @param LanguageRepository $languageRepository
+     * @return Response
      */
     public function index(LanguageRepository $languageRepository): Response
     {
@@ -27,6 +29,8 @@ class LanguageController extends AbstractController
 
     /**
      * @Route("/new", name="language_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -39,7 +43,7 @@ class LanguageController extends AbstractController
             $entityManager->persist($language);
             $entityManager->flush();
 
-            return $this->redirectToRoute('language_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('language/new.html.twig', [
@@ -49,17 +53,10 @@ class LanguageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="language_show", methods={"GET"})
-     */
-    public function show(Language $language): Response
-    {
-        return $this->render('language/show.html.twig', [
-            'language' => $language,
-        ]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="language_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Language $language
+     * @return Response
      */
     public function edit(Request $request, Language $language): Response
     {
@@ -69,7 +66,7 @@ class LanguageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('language_index');
+            return $this->redirectToRoute('admin');
         }
 
         return $this->render('language/edit.html.twig', [
@@ -80,6 +77,9 @@ class LanguageController extends AbstractController
 
     /**
      * @Route("/{id}", name="language_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Language $language
+     * @return Response
      */
     public function delete(Request $request, Language $language): Response
     {

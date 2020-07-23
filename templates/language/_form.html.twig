@@ -1,4 +1,11 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="margin-18">
+    <p class="color-black mb-2 mt-2">{{ form.name.vars.label }}</p>
+    {{ form_widget(form.name) }}
+    <p class="color-black mb-2 mt-2">{{ form.image.vars.label }}</p>
+    {{ form_widget(form.image) }}
+</div>
+<button class="btn check-btn-other float-right text-white txt-shadow mt-4">
+    <i class="fa fa-check"></i>
+</button>
 {{ form_end(form) }}

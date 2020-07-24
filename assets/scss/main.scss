@@ -65,6 +65,7 @@ td {
 
 .main-title {
   font-family: $main-title-font;
+  font-weight: bold;
 }
 
 .txt-shadow {
@@ -88,6 +89,7 @@ td {
 .popover-body {
   background-color: $black;
   font-family: $main-title-font;
+  font-weight: bold;
 }
 
 .popover-body a {
@@ -135,6 +137,7 @@ td {
 
 .collapse-img-language {
   height: 2.6rem;
+  filter: drop-shadow(0 0 0.3rem $white);
 }
 
 /* SIDENAV */
@@ -286,7 +289,7 @@ td {
 #user_username, #user_firstname, #user_lastname, #user_job_title, #project_Title,
 #project_link, #project_image, #project_client, #language_name, #language_image,
 #social_network_name, #social_network_image, #social_network_link, #user_languages,
-#user_socialNetworks{
+#user_socialNetworks, #project_languages {
   width: 80%;
 }
 
@@ -299,7 +302,7 @@ td {
 
 #project_description {
   width: 80%;
-  height: 11rem;
+  height: 22.6rem;
   padding-left: 0.3rem;
   margin-bottom: 0.25rem;
 }
@@ -335,7 +338,6 @@ td {
   }
 }
 
-
 .alert-anime {
   text-shadow: none;
   animation: alert 2s infinite;
@@ -348,6 +350,8 @@ td {
   }
   &-img {
     width: 7rem;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 0.3rem $black);
   }
 }
 

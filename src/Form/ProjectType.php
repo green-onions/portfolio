@@ -34,9 +34,8 @@ class ProjectType extends AbstractType
             ->add('languages', EntityType::class, [
                 'class' => Language::class,
                 'choice_label' => 'name',
-                'label' => false,
+                'label' => 'Techno',
                 'multiple' => true,
-                'expanded' => true,
                 'by_reference' => false,
             ])
         ;

@@ -17,7 +17,7 @@
                     <div class="col-4 border-left pl-0">
                         <div class="top-card d-flex justify-content-center align-items-center">
                             <p class="p-0 m-0 txt-shadow">{{ project.title|upper }}</p>
-                            <img class="img-project pl-3" src="{{ project.image }}" alt="Image of {{ project.title }}">
+                            <img class="img-project pl-3" src="{{ asset('images/projects/'~project.image) }}" alt="Image of {{ project.title }}">
                         </div>
                         {% for language in project.languages %}
                         <img class="collapse-img-language ml-3 mt-3" src="{{ language.image }}" alt="Image of {{ language.name }}">

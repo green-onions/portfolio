@@ -18,6 +18,7 @@
 ###> others ###
 .idea/
 .DS_Store
+/public/images
 ###< others ###
 
 ###> symfony/webpack-encore-bundle ###

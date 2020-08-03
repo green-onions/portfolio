@@ -49,7 +49,7 @@
             <div class="admin-subcard rounded-bottom d-flex justify-content-center mb-3">
                 {% set project = projects|last %}
                 <a class="text-center" href="{{ path('project_edit', {'id': project.id}) }}">
-                    <img class="admin-logo" src="{{ project.image }}" alt="Image de {{ project.title }}">
+                    <img class="admin-logo" src="{{ asset('images/projects/'~project.image) }}" alt="Image de {{ project.title }}">
                 </a>
             </div>
             <div>

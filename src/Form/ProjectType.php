@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProjectType extends AbstractType
 {
@@ -25,8 +26,8 @@ class ProjectType extends AbstractType
             ->add('description', TextareaType::class, [
                 'label' => 'Description'
             ])
-            ->add('image', TextType::class, [
-                'label' => 'Lien de l\'image'
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Image'
             ])
             ->add('client', TextType::class, [
                 'label' => 'Client'

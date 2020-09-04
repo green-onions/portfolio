@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ProjectRepository;
-use DateTimeImmutable;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -132,6 +131,22 @@ class Project
             // otherwise the event listeners won't be called and the file is lost
             $this->randNum = rand(1,1000);
         }
+    }
+
+    /**
+     * @return int
+     */
+    public function getRandNum(): int
+    {
+        return $this->randNum;
+    }
+
+    /**
+     * @param int $randNum
+     */
+    public function setRandNum(int $randNum): void
+    {
+        $this->randNum = $randNum;
     }
 
     public function getImageFile(): ?File

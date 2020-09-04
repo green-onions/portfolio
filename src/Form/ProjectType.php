@@ -27,7 +27,12 @@ class ProjectType extends AbstractType
                 'label' => 'Description'
             ])
             ->add('imageFile', VichImageType::class, [
-                'label' => 'Image'
+                'label' => 'Image',
+                'required' => true,
+                'allow_delete' => false,
+                'download_uri' => false,
+                'image_uri' => false,
+                'asset_helper' => false,
             ])
             ->add('client', TextType::class, [
                 'label' => 'Client'

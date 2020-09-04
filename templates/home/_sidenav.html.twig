@@ -7,7 +7,7 @@
         </div>
         <img class="sidenav-img" src="https://avatars.githubusercontent.com/{{ user.username }}" alt="Picture of {{ user.firstname }} {{ user.lastname }}">
         <div class="d-flex">
-            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded pr-2 pl-2">
+            <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-left pr-2 pl-2">
                 <p class="m-0 p-0 sidenav-name">{{ user.firstname|upper }} {{ user.lastname|upper }}</p>
             </div>
             <div class="btn-group dropleft social-network-container">
@@ -15,7 +15,7 @@
                 <div class="dropdown-menu">
                     {% for socialNetwork in user.socialNetworks %}
                         <a class="dropdown-item" href="{{ socialNetwork.link }}" target="_blank">
-                            <img class="img-project" src="{{ socialNetwork.image }}" alt="Logo of {{ socialNetwork.name }}">
+                            <img class="sidenav-img-network" src="{{ asset('images/networks/'~socialNetwork.image) }}" alt="Logo de {{ socialNetwork.name }}">
                         </a>
                     {% endfor %}
                 </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="d-flex justify-content-center mt-3">
             {% for language in user.languages %}
-                <img class="sidenav-img-language" src="{{ language.image }}" alt="Image of {{ language.name }}">
+                <img class="sidenav-img-language" src="{{ asset('images/languages/'~language.image) }}" alt="Image de {{ language.name }}">
             {% endfor %}
         </div>
     </div>

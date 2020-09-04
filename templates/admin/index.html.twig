@@ -14,6 +14,9 @@
                 <a class="ml-2 link-edit" href="{{ path('user_edit') }}">
                     <i class="fa fa-edit"></i>
                 </a>
+                <a class="ml-2 link-edit" href="{{ path('reset_password') }}">
+                    <i class="fa fa-lock"></i>
+                </a>
             </h2>
             <div class="d-flex justify-content-center">
                 <img class="admin-img" src="https://avatars.githubusercontent.com/{{ user.username }}" alt="Picture of {{ user.firstname }} {{ user.lastname }}">
@@ -30,7 +33,7 @@
             </div>
             <div class="d-flex justify-content-center mt-3">
                 {% for language in user.languages %}
-                    <img class="sidenav-img-language" src="{{ language.image }}" alt="Image of {{ language.name }}">
+                    <img class="sidenav-img-language" src="{{ asset('images/languages/'~language.image) }}" alt="Image of {{ language.name }}">
                 {% endfor %}
             </div>
         </div>

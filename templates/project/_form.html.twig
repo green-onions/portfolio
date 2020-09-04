@@ -5,15 +5,16 @@
         {{ form_widget(form.Title) }}
         <p class="color-black mb-2 mt-2">{{ form.link.vars.label }}</p>
         {{ form_widget(form.link) }}
-        <p class="color-black mb-2 mt-2">{{ form.image.vars.label }}</p>
-        {{ form_widget(form.image) }}
+        <p class="color-black mb-2 mt-2">{{ form.imageFile.vars.label }}</p>
+        {{ form_widget(form.imageFile) }}
         <p class="color-black mb-2 mt-2">{{ form.client.vars.label }}</p>
         {{ form_widget(form.client) }}
+        <p class="color-black mb-2 mt-2">{{ form.languages.vars.label }}</p>
+        {{ form_widget(form.languages) }}
     </div>
     <div class="col-6 form-user-column">
         <p class="color-black mb-2">{{ form.description.vars.label }}</p>
         {{ form_widget(form.description) }}
-        {{ form_widget(form.languages) }}
     </div>
 </div>
 <button class="btn check-btn float-right text-white txt-shadow mt-3">

@@ -57,6 +57,9 @@ body {
   &-red {
     color: $red;
   }
+  &-green {
+    color: $green;
+  }
 }
 
 td {
@@ -65,6 +68,7 @@ td {
 
 .main-title {
   font-family: $main-title-font;
+  font-weight: bold;
 }
 
 .txt-shadow {
@@ -88,6 +92,7 @@ td {
 .popover-body {
   background-color: $black;
   font-family: $main-title-font;
+  font-weight: bold;
 }
 
 .popover-body a {
@@ -130,17 +135,23 @@ td {
 }
 
 .img-project {
-  height: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 10%;
+  border: 1px solid $black;
 }
 
 .collapse-img-language {
   height: 2.6rem;
+  filter: drop-shadow(0 0 0.3rem $white);
 }
 
 /* SIDENAV */
 .sidenav {
   background-color: $bronze;
   border-left: 5px solid $black !important;
+  position: fixed;
+  margin-left: 100vw - (0.25 * 100vw);
   &-title-container {
     height: 2rem;
     background-color: $black;
@@ -152,10 +163,15 @@ td {
     border: 4px solid $black;
     margin-top: 1.6rem;
     &-language {
-      width: 4rem;
+      width: 3.5rem;
+      margin: 0 0.4rem;
     }
     &-message {
       height: 2rem;
+    }
+    &-network {
+      height: 2rem;
+      width: 2rem;
     }
   }
   &-name {
@@ -187,6 +203,7 @@ td {
     height: 2rem;
     background-color: $mustard;
     padding: 0 0.3rem 0 0.4rem;
+    border-radius: 0 0.25rem 0.25rem 0;
   }
 }
 
@@ -195,6 +212,7 @@ td {
   background-color: $mustard;
 }
 
+/* HOME MODAL*/
 .modal-content {
   background-color: $mustard;
 }
@@ -285,7 +303,9 @@ td {
 
 #user_username, #user_firstname, #user_lastname, #user_job_title, #project_Title,
 #project_link, #project_image, #project_client, #language_name, #language_image,
-#social_network_name, #social_network_image, #social_network_link {
+#social_network_name, #social_network_image, #social_network_link, #user_languages,
+#user_socialNetworks, #project_languages, #reset_password_oldPassword,
+#reset_password_password_first, #reset_password_password_second {
   width: 80%;
 }
 
@@ -293,36 +313,14 @@ td {
   width: 80%;
   height: 15rem;
   padding-left: 0.3rem;
-  margin-bottom: 0.563rem;
-}
-
-#user_socialNetworks {
-  margin-top: 0;
-  padding-top: 0;
+  margin-bottom: -0.45rem;
 }
 
 #project_description {
   width: 80%;
-  height: 11rem;
+  height: 22.6rem;
   padding-left: 0.3rem;
   margin-bottom: 0.25rem;
-}
-
-#user_languages, #user_socialNetworks, #project_languages {
-  color: $black;
-}
-
-//#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
-//  margin-right: 0.5rem;
-//}
-
-[id^="user_languages_"], [id^="user_socialNetworks_"], [id^="project_languages_"] {
-  margin-right: 0.5rem;
-  margin-left: 1rem;
-}
-
-#user_languages_7, #user_socialNetworks_7, #project_languages_7 {
-  margin-left: 0;
 }
 
 #message_mail, #message_name {
@@ -343,8 +341,17 @@ td {
   margin-left: 18%;
 }
 
-.message-name {
-  min-width: 12rem;
+.message {
+  &-name {
+    min-width: 12rem;
+  }
+  &-link {
+    color: $grey-dark;
+  }
+  &-link:hover {
+    color: $red;
+    text-decoration: none;
+  }
 }
 
 .alert-anime {
@@ -356,8 +363,24 @@ td {
   &-container {
     background-color: $mustard;
     width: 10rem;
+    &-message {
+      background-color: $mustard;
+      width: 25rem;
+      height: 10rem;
+      overflow-y: scroll;
+    }
   }
   &-img {
     width: 7rem;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 0.3rem $black);
   }
+}
+
+.btn-sm {
+  margin: 0 0 0.3rem 1rem;
+}
+
+.custom-switch {
+  padding-left: 2.8rem;
 }

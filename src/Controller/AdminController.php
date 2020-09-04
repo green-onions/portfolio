@@ -20,7 +20,7 @@ class AdminController extends AbstractController
      * @param LanguageRepository $languageRepository
      * @param SocialNetworkRepository $networkRepository
      * @param MessageRepository $messageRepository
-     * @return void
+     * @return Response
      */
     public function index(
         UserRepository $userRepository,

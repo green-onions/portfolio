@@ -1,0 +1,27 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        project_image:
+            uri_prefix: /images/projects
+            upload_destination: '%kernel.project_dir%/public/images/projects'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+        language_image:
+            uri_prefix: /images/languages
+            upload_destination: '%kernel.project_dir%/public/images/languages'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+        social_network_image:
+            uri_prefix: /images/networks
+            upload_destination: '%kernel.project_dir%/public/images/networks'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

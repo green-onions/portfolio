@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class SocialNetworkType extends AbstractType
 {
@@ -16,8 +17,13 @@ class SocialNetworkType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nom du réseau',
             ])
-            ->add('image', TextType::class, [
-                'label' => 'Lien de l\'image',
+            ->add('imageFile', VichImageType::class, [
+                'label' => 'Image',
+                'required' => true,
+                'allow_delete' => false,
+                'download_uri' => false,
+                'image_uri' => false,
+                'asset_helper' => false,
             ])
             ->add('link', TextType::class, [
                 'label' => 'Lien vers le profil',

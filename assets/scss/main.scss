@@ -241,6 +241,23 @@ td {
 }
 
 /* ADMIN */
+@keyframes balance {
+  0% {
+    transform: rotate(-5deg) translate(0px, 0px);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  100% {
+    transform: rotate(5deg) translate(0px, 0px);
+  }
+}
+
+.balance {
+  animation: 3s linear balance 0s infinite alternate;
+  filter: drop-shadow(3px 3px 5px #6d2c19);
+}
+
 .admin {
   &-card {
     background-color: $bronze;
@@ -261,6 +278,7 @@ td {
   }
   &-logo {
     width: 80%;
+    padding: 10%;
     filter: drop-shadow(0 0 0.3rem $black);
   }
 }

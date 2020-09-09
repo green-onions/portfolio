@@ -1,9 +1,9 @@
 {{ form_start(form) }}
 <div class="d-flex">
-    <div class="custom-control custom-switch btn bck-bronze mr-3">
+    <div class="custom-control custom-switch btn bck-grey-dark mr-3">
         {{ form_widget(form.isRead, {'attr': {'class': 'custom-control-input'}}) }}
-        <label class="text-white txt-shadow custom-control-label" for="message_validate_isRead">{{ form.isRead.vars.label }}</label>
+        <label class="text-white custom-control-label" for="message_validate_isRead">{{ form.isRead.vars.label }}</label>
     </div>
-    <button class="btn bck-bronze float-right text-white txt-shadow">{{ button_label|default('Valider') }}</button>
+    <button class="btn bck-grey-dark float-right text-white">{{ button_label|default('Valider') }}</button>
 </div>
 {{ form_end(form) }}

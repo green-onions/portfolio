@@ -22,12 +22,12 @@
                 <img class="admin-img" src="https://avatars.githubusercontent.com/{{ user.username }}" alt="Picture of {{ user.firstname }} {{ user.lastname }}">
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     {{ user.firstname|upper }} {{ user.lastname|upper }}
                 </p>
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-title-container rounded mt-3 pr-1 pl-1">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     {{ user.jobTitle|upper }}
                 </p>
             </div>
@@ -40,12 +40,12 @@
         <div class="admin-card rounded ml-4 mt-5">
             <h2 class="main-title">Projets</h2>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     {{ projects|length }} projet{{ projects|length > 1 ? 's' : '' }} mis en avant
                 </p>
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     Dernier projet publié
                 </p>
             </div>
@@ -56,10 +56,10 @@
                 </a>
             </div>
             <div>
-                <a class="btn bck-mustard color-black float-right ml-3" href="{{ path('project_index') }}">
+                <a class="btn bck-grey-light color-black float-right ml-3" href="{{ path('project_index') }}">
                     <i class="fa fa-eye"></i>
                 </a>
-                <a class="btn bck-mustard color-black float-right" href="{{ path('project_new') }}">
+                <a class="btn bck-grey-light color-black float-right" href="{{ path('project_new') }}">
                     <i class="fa fa-plus"></i>
                 </a>
             </div>
@@ -68,7 +68,7 @@
             <h2 class="main-title">Options</h2>
             {% if messages %}
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     {{ messages|length }} message{{ messages|length > 1 ? 's' : '' }} non lu{{ messages|length > 1 ? 's' : '' }}
                     <i class="fa fa-circle color-red ml-2 alert-anime"></i>
                 </p>
@@ -82,7 +82,7 @@
             </div>
             {% endif %}
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     {{ languages|length }} techno{{ languages|length > 1 ? 's' : '' }} disponible{{ languages|length > 1 ? 's' : '' }}
                 </p>
             </div>
@@ -94,7 +94,7 @@
                 {% endfor %}
             </div>
             <div class="d-flex justify-content-center align-items-center sidenav-name-container rounded-top pr-2 pl-2 mt-3">
-                <p class="m-0 p-0 sidenav-name">
+                <p class="m-0 p-0 sidenav-name txt-shadow">
                     {{ networks|length }} réseau{{ networks|length > 1 ? 'x' : '' }} soci{{ networks|length > 1 ? 'aux' : 'al' }}
                 </p>
             </div>

@@ -18,7 +18,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         son développement avec trois autres développeurs à l\'époque en en formation à l\'antenne 
         de Bordeaux. Joshua est depuis utilisé par l\'organisme de formation pour organiser 
         des concours à l\'échelle européenne, avec plus d\'une centaine de joueurs en simultané.');
-        $project->setImage('https://zupimages.net/up/20/30/putq.png');
+        $project->setImage('joshua-5f301858b813d453961828');
         $project->setClient('Wild Code School');
         $project->setLink('https://joshua-wcs.herokuapp.com/');
         $project->setRandNum(rand(0, 999));

@@ -11,11 +11,11 @@ class SocialNetworkFixtures extends Fixture implements DependentFixtureInterface
 {
     const SOCIAL_NETWORKS = [
         'LinkedIn' => [
-            'https://image.flaticon.com/icons/svg/174/174857.svg',
+            'linkedin-5f283a88bbbf8589116049.png',
             'https://www.linkedin.com/in/marienregnault/',
             ],
         'GitHub'   => [
-            'https://image.flaticon.com/icons/svg/2111/2111432.svg',
+            'github-5f283a95e19fd927226038.png',
             'https://github.com/green-onions',
         ],
     ];
@@ -27,6 +27,7 @@ class SocialNetworkFixtures extends Fixture implements DependentFixtureInterface
             $socialNetwork->setName($name);
             $socialNetwork->setImage($data[0]);
             $socialNetwork->setLink($data[1]);
+            $socialNetwork->setRandNum(rand(0, 999));
             $socialNetwork->setUser($this->getReference('user'));
             $manager->persist($socialNetwork);
         }

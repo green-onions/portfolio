@@ -10,8 +10,8 @@ use Doctrine\Persistence\ObjectManager;
 class LanguageFixtures extends Fixture implements DependentFixtureInterface
 {
     const LANGUAGES = [
-        'PHP'        => 'https://image.flaticon.com/icons/svg/2306/2306154.svg',
-        'JavaScript' => 'https://image.flaticon.com/icons/svg/2306/2306122.svg',
+        'PHP'        => 'php-5f2834ba6fa23989436404.png',
+        'JavaScript' => 'js-5f28351d207ae572967224.png',
     ];
 
     public function load(ObjectManager $manager)
@@ -21,6 +21,7 @@ class LanguageFixtures extends Fixture implements DependentFixtureInterface
             $language = new Language();
             $language->setName($name);
             $language->setImage($image);
+            $language->setRandNum(rand(0, 999));
             $language->setUser($this->getReference('user'));
             $manager->persist($language);
             $this->addReference('language_' . $i, $language);
@@ -35,4 +36,3 @@ class LanguageFixtures extends Fixture implements DependentFixtureInterface
         return [UserFixtures::class];
     }
 }
-

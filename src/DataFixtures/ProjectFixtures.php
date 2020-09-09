@@ -21,6 +21,7 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         $project->setImage('https://zupimages.net/up/20/30/putq.png');
         $project->setClient('Wild Code School');
         $project->setLink('https://joshua-wcs.herokuapp.com/');
+        $project->setRandNum(rand(0, 999));
         for ($i = 0; $i < 2; $i++) {
             $project->addLanguage($this->getReference('language_' . $i));
         }
@@ -34,4 +35,3 @@ class ProjectFixtures extends Fixture implements DependentFixtureInterface
         return [LanguageFixtures::class];
     }
 }
-

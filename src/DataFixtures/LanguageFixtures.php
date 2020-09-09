@@ -35,3 +35,4 @@ class LanguageFixtures extends Fixture implements DependentFixtureInterface
         return [UserFixtures::class];
     }
 }
+

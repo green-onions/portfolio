@@ -19,6 +19,9 @@
 .idea/
 .DS_Store
 /public/images
+/src/DataFixtures/LanguageFixtures.php
+/src/DataFixtures/ProjectFixtures.php
+/src/DataFixtures/SocialNetworkFixtures.php
 ###< others ###
 
 ###> symfony/webpack-encore-bundle ###

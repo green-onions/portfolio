@@ -30,6 +30,9 @@ body {
   &-grey-dark {
     background-color: $grey-dark;
   }
+  &-grey-darken {
+    background-color: darken($grey-dark, 5);
+  }
   &-grey-light {
     background-color: $grey-light;
   }
@@ -50,6 +53,9 @@ body {
   }
   &-grey-dark {
     color: $grey-dark;
+  }
+  &-grey-darken {
+    color: darken($grey-dark, 5);
   }
   &-grey-light {
     color: $grey-light;
@@ -104,17 +110,18 @@ td {
 
 /* ACCORDION */
 .card {
-  border: 1px solid $black;
+  border: 1px solid $lightblue;
   &-header {
-    background-color: $mustard;
+    background-color: darken($grey-dark, 5);
   }
   &-title {
     font-family: $main-title-font;
+    color: $white;
     margin-bottom: 0;
     font-size: 1.5rem;
   }
   &-link {
-    color: $mustard;
+    color: $lightblue;
     &:hover {
       color: $white;
     }
@@ -122,16 +129,16 @@ td {
 }
 
 .border-left {
-  border-left: 2px solid $white !important;
+  border-left: 2px solid $lightblue !important;
 }
 
 .top-card {
   height: 3rem;
   width: 100%;
   margin: 0;
-  border-bottom: 2px solid $white;
-  border-top: 2px solid $white;
-  border-right: 2px solid $white;
+  border-bottom: 2px solid $lightblue;
+  border-top: 2px solid $lightblue;
+  border-right: 2px solid $lightblue;
 }
 
 .img-project {
@@ -148,19 +155,19 @@ td {
 
 /* SIDENAV */
 .sidenav {
-  background-color: $bronze;
-  border-left: 5px solid $black !important;
+  background-color: darken($grey-dark, 5);
+  border-left: 3px solid $lightblue !important;
   position: fixed;
   margin-left: 100vw - (0.25 * 100vw);
   &-title-container {
     height: 2rem;
-    background-color: $black;
+    background-color: $lightblue;
     margin-top: 1rem;
   }
   &-img {
     width: 80%;
     border-radius: 50%;
-    border: 4px solid $black;
+    border: 3px solid $lightblue;
     margin-top: 1.6rem;
     &-language {
       width: 3.5rem;
@@ -176,10 +183,11 @@ td {
   }
   &-name {
     font-family: $main-title-font;
-    text-shadow: 1px 1px 2px $white, 0 0 1em $white, 0 0 0.2em $mustard;
+    color: darken($grey-dark, 5);
+    font-weight: bold;
     &-container {
       height: 2rem;
-      background-color: $black;
+      background-color: $lightblue;
       margin-top: -1rem;
     }
   }
@@ -190,8 +198,8 @@ td {
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
-    background-color: $mustard;
-    border: 2px solid $black;
+    background-color: $lightblue;
+    border: 2px solid $lightblue;
   }
 }
 
@@ -201,7 +209,7 @@ td {
   }
   &-btn {
     height: 2rem;
-    background-color: $mustard;
+    background-color: darken($white, 10);
     padding: 0 0.3rem 0 0.4rem;
     border-radius: 0 0.25rem 0.25rem 0;
   }
@@ -209,7 +217,7 @@ td {
 
 .dropdown-menu {
   min-width: 0px;
-  background-color: $mustard;
+  background-color: $grey-light;
 }
 
 /* HOME MODAL*/

@@ -162,6 +162,7 @@ td {
   border-left: 3px solid $lightblue !important;
   position: fixed;
   margin-left: 100vw - (0.25 * 100vw);
+  overflow: scroll;
   &-title-container {
     height: 2rem;
     background-color: $lightblue;
@@ -187,7 +188,7 @@ td {
   }
   &-name {
     font-family: $main-title-font;
-    color: $white;
+    color: $grey-dark;
     font-weight: bold;
     &-container {
       height: 2rem;

@@ -5,14 +5,14 @@
 {% block body %}
     <div class="d-flex justify-content-center align-items-center surcontainer">
         <div class="form-other-container rounded shadow-sm">
-            <h1 class="main-title text-center">Message</h1>
-            <p>
+            <h1 class="main-title text-center color-grey-dark">Message</h1>
+            <p class="color-grey-dark">
                 Envoyé par {{ message.name }}
                 (<a class="message-link" href="mailto:{{ message.mail }}" target="_blank">
                     {{ message.mail }}
                 </a>)
             </p>
-            <p>{{ message.message }}</p>
+            <p class="color-grey-dark">{{ message.message }}</p>
             <div class="d-flex justify-content-center">
                 {{ include('message/_form_validate.html.twig') }}
                 {{ include('message/_delete_form.html.twig') }}

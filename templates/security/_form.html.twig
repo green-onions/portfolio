@@ -1,10 +1,10 @@
 {{ form_start(form) }}
 <div class="margin-18">
-    <p class="mb-2 mt-2">{{ form.oldPassword.vars.label }}</p>
+    <p class="mb-2 mt-2 color-grey-dark">{{ form.oldPassword.vars.label }}</p>
     {{ form_widget(form.oldPassword) }}
-    <p class="mb-2 mt-2">Nouveau mot de passe</p>
+    <p class="mb-2 mt-2 color-grey-dark">Nouveau mot de passe</p>
     {{ form_widget(form.password.first) }}
-    <p class="mb-2 mt-2">Confirmer le nouveau mot de passe</p>
+    <p class="mb-2 mt-2 color-grey-dark">Confirmer le nouveau mot de passe</p>
     {{ form_widget(form.password.second) }}
 </div>
 <button class="btn check-btn-other float-right text-white mt-4">
